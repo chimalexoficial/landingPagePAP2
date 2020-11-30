@@ -1,0 +1,177 @@
+{{ define "main" }}
+
+<!-- Banner -->
+{{ if .Site.Data.homepage.banner.enable }}
+{{ with .Site.Data.homepage.banner }}
+<section class="banner-main py-7" id="banner">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-lg-7 col-md-8">
+        <div class="main-banner">
+          <span class="text-color font-weight-bold">Proyecto de Apicación Profesional 2020</span>
+          <h1 class="mb-3 mt-2">Herramienta para el análisis de tus resultados en FOREX.</h1>
+
+          <div class="mb-4">
+          <!--<h4>SUPER PRECIO :- <span class="text-color">${{ .price }}</span></h4>-->  
+          </div>
+          <p class="mb-4">Un tablero de control para analizar todos los datos históricos de  tus operaciones de trading y para mostrar tu desempeño a tus clientes. </p>
+          <button class="btn btn-main mt-2" onclick="location.href='http://trader-lab.herokuapp.com'" data-item-url="http://trader-lab.herokuapp.com">
+          IR A LA HERRAMIENTA <i class="ti-angle-right ml-3"></i>
+        </button>
+        </div>
+      </div>
+
+      {{ if .image }}
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="banner-img pt-5">
+          <img style="max-width: 55%;" src="{{ .image | relURL }}" alt="{{ .title | markdownify }}" class="img-fluid w-100">
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+
+{{ if .Site.Data.homepage.preview.enable }}
+{{ with .Site.Data.homepage.preview }}
+<section class="section" id="acerca">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="book-preview">
+          <img src="{{`images/about/mt4.jpg` | relURL}}" class="background-device img-fluid" alt="device">
+          <div class="book-pages">
+            
+            <div class="item">
+              
+              <div class="overlay">
+                <a href="{{ .image | relURL }}" class="popup-gallery img-fluid" data-title="Preview"><i
+                    class="ti-fullscreen"></i></a>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="section-heading book-info mt-5 mt-lg-0">
+          <h2 class="text-lg mb-4">¡Haz que tus clientes conozcan tu desempeño en todo momento!</h2>
+          ¿Tienes tus trades en un archivo MT4? Exporta tus operaciones y analizalas con los indicadores de nuestra herramienta: 
+
+          <ul class="list-unstyled mt-4 mb-5">
+            <li><i class="ti-check mr-3"></i>Curva de capital</li>
+            <li><i class="ti-check mr-3"></i>Efectividad por par de divisa</li>
+            <li><i class="ti-check mr-3"></i>Efectividad operaciones</li>
+            <li><i class="ti-check mr-3"></i>Logro vs Meta</li>
+            <li><i class="ti-check mr-3"></i>Distribución de operaciones</li>
+            <li><i class="ti-check mr-3"></i>Benchmark</li>
+            
+          </ul>
+          <a onclick="location.href='http://trader-lab.herokuapp.com'" style="color: #ffffff;" class="btn btn-main-2">¡Pruébalo gratis!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+
+{{ if .Site.Data.homepage.contact.enable }}
+{{ with .Site.Data.homepage.contact }}
+<section class="section contact bg-grey" id="ventajas">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-8">
+        <div class="section-heading text-center">
+          <h2 class="mb-2 text-lg">Ventajas</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-6">
+        <div class="contact-info-block text-center mb-4">
+          <i class="{{ .icon }}"></i>
+          <h5>ANÁLISIS</h5>
+          <p>Encuentra las fortalezas y las áreas de oportunidad en tu sistema de trading.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="contact-info-block text-center mb-4">
+          <i class="{{ .icon }}"></i>
+          <h5>TRANSPARENCIA</h5>
+          <p>Involucra a tus clientes con el tablero de control dándoles transparencia en todo momento.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="contact-info-block text-center mb-4">
+          <i class="{{ .icon }}"></i>
+          <h5>CONFIANZA</h5>
+          <p>Transmite confianza a tus clientes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ if .Site.Data.homepage.chapters.enable }}
+{{ with .Site.Data.homepage.chapters }}
+<section class="section chapter" id="alumnos">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="section-heading">
+          <h2 class="text-lg">Equipo</h2>
+          <p>El equipo de trabajo que desarrolló el proyecto</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="chapter-item">
+          <h4>ARTURO ALEXIS SALGADO RAMÍREZ</h4>
+          <p>Ingeniería en Sistemas Computaciones</p>
+
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chapter-item">
+          <h4>CARLOS ELÍAS NUÑO TISCAREÑO</h4>
+          <p>Ingeniería Financiera</p>
+          <p><a href="linkedin.com/in/carlos-nuño-3ba99312a"></a>Perfil de LinkedIn</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="chapter-item">
+          <h4>SALVADOR BRIONES MARTÍNEZ</h4>
+          <p>Ingeniería en Sistemas Computaciones</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="chapter-item">
+          <h4>DIEGO IBARRA PADILLA</h4>
+          <p>Ingeniería en Empresas de Servicios</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+
+
+
+
+
+
+{{ end }}
